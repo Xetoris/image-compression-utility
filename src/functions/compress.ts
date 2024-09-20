@@ -68,14 +68,14 @@ async function compress(input: CompressInput): Promise<void> {
 async function prepareOutputDirectory(path: string): Promise<void> {
     // Check directory exists or create it if not
     try {
-        await mkdir(path);
+        await mkdir(path, { recursive: true });
 
     // eslint-disable-next-line
     }catch (e: any) {
         if (Object.prototype.hasOwnProperty.call(e, 'code') && e.code.toLowerCase() !== "eexist") {
-            simpleLogger.warn(`Unexpected error hit while created output directory! Aborting...`);
-            simpleLogger.debug(`Error: ${e.message}.`);
-            throw new Error("Failed to create output directory!");
+            throw new Error("Failed to create output directory!", {
+                cause: e         
+            });
         }
 
         simpleLogger.info('Output directory exists. Continuing...');

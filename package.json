@@ -2,21 +2,27 @@
   "name": "image-compression",
   "version": "0.0.1",
   "description": "Utility to run image compression",
+  "packageManager": "pnpm@9.10.0",
   "type": "module",
   "exports": "./src/index.ts",
   "author": "cmccord4pa@gmail.com",
   "license": "ISC",
+  "scripts": {
+    "run": "tsx ./src/index.ts"
+  },
   "dependencies": {
+    "commander": "~12.1.0",
+    "sharp": "~0.33.5"
+  },
+  "devDependencies": {
     "@types/node": "~20.10.4",
-    "@typescript-eslint/parser": "~6.14.0",
-    "@typescript-eslint/eslint-plugin": "~6.14.0",
-    "commander": "~11.1.0",
-    "eslint": "~8.56.0",
+    "@typescript-eslint/parser": "~8.6.0",
+    "@typescript-eslint/eslint-plugin": "~8.6.0",
+    "eslint": "~9.10.0",
     "eslint-config-prettier": "~9.1.0",
-    "prettier": "~3.1.1",
-    "sharp": "~0.33.0",
-    "ts-node": "~10.9.2",
-    "typescript": "~5.3.3",
-    "winston": "~3.11.0"
+    "prettier": "~3.3.3",
+    "tsx": "~4.19.1",
+    "typescript": "~5.6.2",
+    "winston": "~3.14.2"
   }
 }
